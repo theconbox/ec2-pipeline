@@ -1,7 +1,13 @@
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# - task: S3Upload@1
+  inputs:
+    awsCredentials: 'AWS-connection'
+    regionName: 'ap-south-1'
+    bucketName: 'hy0470'
+    globExpressions: '**'
+    createBucket: true
 
 trigger:
 - main
